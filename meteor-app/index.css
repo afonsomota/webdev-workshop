@@ -1,0 +1,184 @@
+body{
+  margin:0;
+  font-family: 'Lato', sans-serif;
+  background-image: url('white_wall.png');
+}
+
+.header {
+  background-color: #03ABF4;
+  width: 100%;
+  min-height: 60px;
+}
+
+.header > .left {
+  float: left;
+}
+
+.header > .right {
+  float: right;
+}
+
+.header .menu-item{
+  display: inline-block;
+  min-width:100px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 20px;
+  padding-bottom: 15px;
+}
+
+.header .menu-item a{
+  color: white;
+  text-decoration:none;
+}
+
+.header .menu-item:hover {
+  border-bottom: 5px solid #FFB700;
+}
+
+.header .fblogin {
+  display: inline-block;
+}
+
+.menu {
+  margin:20px;
+  margin-bottom: 0px;
+  padding:0;
+  display: inline-block;
+}
+
+.user-info{
+  display: inline-block;
+}
+
+.user-info img{
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.user-info .user-name{
+  display: inline-block;
+  color: white;
+  margin-left: 5px;
+}
+
+.brand {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  padding-left: 20px;
+  padding-top: 5px;
+  display: block;
+  font-weight: bold;
+}
+
+.content {
+  padding: 8px;
+  min-height:50px;
+}
+
+.social-box {
+  width: 500px;
+  background-color: white;
+  margin: 50px auto 0 auto;
+  position: relative;
+}
+
+.social-head {
+  padding: 20px;
+  width:100%;
+}
+
+.social-head > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.circular {
+  width: 75px;
+  height: 75px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+#gohan {
+  background: url(gohan.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+#zack {
+  background: url(zack_cloud.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+.social-head .name {
+  color: #ff8700;
+  line-height: 75px;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.divider {
+  border-bottom: 1px solid #ccc;
+  margin: 0 100px;
+}
+
+.post {
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #555;
+}
+
+.vote {
+  position: absolute;
+  right:0;
+  top:0;
+  width:50px;
+  height: 100px;
+  text-align: center;
+}
+
+.vote > i {
+  width: 50px;
+  margin-top: 10px;
+}
+
+.vote > i:hover {
+  cursor: pointer;
+  color: #FF3100;
+}
+
+.vote > i.active{
+  color: #FF3100;
+}
+
+.input-post{
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  cursor: pointer;
+}
+
+.input-post #new-status{
+  resize: none;
+  overflow: scroll;
+  width: 394px;
+  height: 50px;
+  font-size: 15px;
+}
+
+.input-post #submit{
+  width: 100px;
+  background-color: #ff8700;
+  color: white;
+  margin-left: 25px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 50px;
+}

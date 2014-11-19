@@ -1,7 +1,6 @@
 <head>
   <title>OctWorkshop</title>
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="index.css" type="text/css"></link>
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
@@ -10,6 +9,13 @@
       <a href="/" class="brand">MySocial</a>
     </div> 
     <div class="right">
+      {{#if currentUser}}
+      <div class="user-info">
+        <img src="{{currentUser.services.facebook.profilePicture}}">
+        <div class="user-name">{{currentUser.services.facebook.name}}</div>
+      </div>
+      {{/if}}  
+      {{> loginButtons}} 
       <ul class="menu">
         <li class="menu-item">
           <a href="#">Feed</a>
@@ -21,16 +27,17 @@
     </div>
   </div>
   <div class="content">
+    {{> postForm}}
     {{> feed}}
   </div>
 </body>
 
 <template name="feed">
-{{#each posts}}    
+{{#each posts}}
   <div class="social-box">
     <div class="vote">
-      <i class="fa fa-chevron-up fa-2x vote-up {{upStatus}}"></i>
-      <i class="fa fa-chevron-down fa-2x vote-down {{downStatus}}"></i>
+      <i data-id="{{_id}}" class="js-upvote fa fa-chevron-up fa-2x vote-up {{upVotesCount}}"></i>
+      <i data-id="{{_id}}" class="js-downvote fa fa-chevron-down fa-2x vote-down {{downVotesCount}}"></i>
     </div>
     <div class="social-head">
       <div class="circular" style="background-image: url({{photo}})"></div>
@@ -38,8 +45,18 @@
     </div>
     <div class="divider"></div>
       <div class="post">
-        <p>{{post}}</p>
+        {{#each statusLines}} 
+        <p>{{this}}</p>
+        {{/each}}
       </div>
   </div>
 {{/each}}
+</template>
+
+<template name="postForm">
+  <div class="input-post">
+    <textarea id="new-status" 
+      placeholder="Write your status here..."></textarea>  
+    <div id="submit" class="submit-post">Post</div>
+  </div>
 </template>
